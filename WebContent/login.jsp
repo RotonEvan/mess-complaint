@@ -20,7 +20,7 @@
 		<h2>IIT Bhilai Mess Complaint System</h2>
 		<form action="Login" method="post">
 			<label class="radio-inline"><input type="radio"
-				name="user-radio-button" value="user" checked>User</label>
+				name="user-radio-button" value="user">User</label>
 			<label class="radio-inline"><input
 				type="radio" name="mess-radio-button" value="mess">Mess</label>
 			<div class="inputBox">

@@ -38,10 +38,16 @@ public class VerifyUser {
 				user.setUser_pk(result1.getInt("user"));
 				user.setUser_id(result1.getString("user_id"));
 				user.setUser_name(result1.getString("user_name"));
+				user.setPassword(result1.getString("password"));
+				System.out.println("Checking 03");
+				System.out.println(user.getUser_id());
+				System.out.println(user.getPassword());
+				System.out.println(password);
 				
-				if (password == result1.getString("password")) {
+				if (password.equals(user.getPassword())) {
 					valid = true;
 					id = user.getUser_id();
+					System.out.println("Checking 04");
 				}
 				
 			}

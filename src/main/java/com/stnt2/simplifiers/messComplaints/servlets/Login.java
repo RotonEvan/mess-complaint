@@ -68,9 +68,16 @@ public class Login extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", username);
 				session.setAttribute("id", id);
+				response.sendRedirect(request.getContextPath() + "/complaint");
+			} else {
+
+				request.setAttribute("message", "Invalid Credentials");
+				RequestDispatcher rs = request.getRequestDispatcher("login.jsp");
+				rs.forward(request, response);
+
 			}
 		}
-		else {
+		else if (request.getParameter("mess-radio-button") != null) {
 			VerifyMess currentUser = new VerifyMess();
 			try {
 				currentUser = new VerifyMess(username, password);
@@ -84,7 +91,19 @@ public class Login extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", username);
 				session.setAttribute("id", id);
+				response.sendRedirect(request.getContextPath() + "/Complaint");
+			} else {
+
+				request.setAttribute("message", "Invalid Credentials");
+				RequestDispatcher rs = request.getRequestDispatcher("login.jsp");
+				rs.forward(request, response);
+
 			}
+		}
+		else {
+			request.setAttribute("message", "Choose User or Mess");
+			RequestDispatcher rs = request.getRequestDispatcher("login.jsp");
+			rs.forward(request, response);
 		}
 	}
 
