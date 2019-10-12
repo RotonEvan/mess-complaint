@@ -1,0 +1,91 @@
+body{
+	margin:0;
+	padding:0;
+	font-family:sans-serif;
+	background: #36454f;
+	background-size:cover;
+}
+.box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%, -50%);
+	width:500px;
+	padding:40px;
+	background: rgba(255,255,255,.9);
+	box-sizing: border-box;
+	box-shadow: 0 15px 20px rgba(255,255,255,.2);
+	border-radius: 10px;	
+}
+.box h2{
+	margin: 0 0 30px;
+	padding-bottom: 20px;
+	color: #03a9f4;
+	text-align: center;
+}
+
+.box .radio-inline {
+	position: relative;
+	top: -5px;
+}
+
+.box .inputBox{
+	top: 15px;
+	position: relative;
+}
+
+.box .inputBox .fa{
+	position: absolute;
+	left: 400px;
+	top: 15px;
+	cursor: pointer;
+	font-size: 18px;
+}
+.fa.active{
+	color: dodgerblue;
+}
+
+.box .inputBox input{
+	width:100%;
+	padding: 10px 0;
+	font-size:16px;
+	color: rgba(0,0,0,.8);
+	left-spacing: 1px;
+	margin-bottom: 20px;
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0,.8);
+	outline: none;
+	background: transparent;
+}
+
+.box .inputBox label{
+	position: absolute;
+	top:0;
+	left:0;
+	padding: 10px 0;
+	font-size:16px;
+	color: rgba(0,0,0,.8);
+	pointer-events: none;
+	transition: .5s;
+}
+.box .inputBox input:focus ~label,
+.box .inputBox input:valid ~label{
+	top: -18px;
+	left:0;
+	color: #03a9f4;
+	font-size: 12px;
+}
+
+
+.box input[type="submit"]{
+	background: transparent;
+	border: none;
+	outline: noone;
+	color: #fff;
+	font-size: 15px;
+	background: #03a9f4;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
