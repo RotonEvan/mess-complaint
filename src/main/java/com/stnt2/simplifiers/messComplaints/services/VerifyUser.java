@@ -16,10 +16,12 @@ public class VerifyUser {
 
 	static String id;
 	static boolean valid;
+	static int pk;
 
 	public VerifyUser(String username, String password) throws ClassNotFoundException {
 		// TODO Auto-generated constructor stub
 		id = new String();
+		pk = -1;
 		valid = false;
 
 		System.out.println(username);
@@ -47,6 +49,7 @@ public class VerifyUser {
 				if (password.equals(user.getPassword())) {
 					valid = true;
 					id = user.getUser_id();
+					pk = user.getUser_pk();
 					System.out.println("Checking 04");
 				}
 				
@@ -64,6 +67,10 @@ public class VerifyUser {
 
 	public String getId() {
 		return id;
+	}
+	
+	public int getUser_Pk() {
+		return pk;
 	}
 
 	public boolean isValid() {

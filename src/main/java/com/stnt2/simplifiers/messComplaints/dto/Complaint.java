@@ -10,7 +10,7 @@ public class Complaint {
 	private Integer mess_pk;
 	private String date;
 	
-	public complaint (Integer complaint_pk, String complaint_id, String complaint_description, String meal,Integer user_pk,Integer mess_pk,String date) {
+	public Complaint (Integer complaint_pk, String complaint_id, String complaint_description, String meal, Integer user_pk,Integer mess_pk,String date) {
 		this.complaint_pk = complaint_pk;
 		this.complaint_id = complaint_id;
 		this.user_pk = user_pk;
@@ -20,7 +20,7 @@ public class Complaint {
 		this.date = date;
 	}
 	
-	public complaint() {
+	public Complaint() {
 		// TODO Auto-generated constructor stub
 	}
 	

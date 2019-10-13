@@ -65,9 +65,11 @@ public class Login extends HttpServlet {
 
 			if (currentUser.isValid()) {
 				String id = currentUser.getId();
+				int pk = currentUser.getUser_Pk();
 				HttpSession session = request.getSession();
 				session.setAttribute("username", username);
 				session.setAttribute("id", id);
+				session.setAttribute("pk", pk);
 				response.sendRedirect(request.getContextPath() + "/complaint");
 			} else {
 

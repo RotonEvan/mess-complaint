@@ -135,37 +135,38 @@ option {
 					</div>
 				</div>
 				<div class="breaker"></div>
+				<form action="Complaint" method="post">
 				<div class="row">
 					<label class="label col-md-2 control-label">Name</label>
 					<div class="col-md-10">
 						<input type="text" class="form-control" name="name"
-							placeholder="${username}">
+							placeholder="${username}" readonly="true">
 					</div>
 				</div>
 				<div class="row">
 					<label class="label col-md-2 control-label">ID</label>
 					<div class="col-md-10">
 						<input type="text" class="form-control" name="id"
-							placeholder="${id}">
+							placeholder="${id}" readonly="true">
 					</div>
 				</div>
 				<div class="row">
 					<label class="label col-md-2 control-label">Mess</label>
 					<div class="col-md-10">
-						<select class="form-control">
-							<option>Castle Dio</option>
-							<option>Castle Ena</option>
+						<select class="form-control" name="mess_pk">
+							<option value="2">Castle Dio</option>
+							<option value="1">Castle Ena</option>
 						</select>
 					</div>
 				</div>
 				<div class="row">
 					<label class="label col-md-2 control-label">Meal</label>
 					<div class="col-md-10">
-						<select class="form-control">
-							<option>Breakfast</option>
-							<option>Lunch</option>
-							<option>Snacks</option>
-							<option>Dinner</option>
+						<select class="form-control" name="meal">
+							<option value="Breakfast">Breakfast</option>
+							<option value="Lunch">Lunch</option>
+							<option value="Snacks">Snacks</option>
+							<option value="Dinner">Dinner</option>
 						</select>
 					</div>
 				</div>
@@ -180,12 +181,13 @@ option {
 					<label class="label col-md-2 control-label">Complaint</label>
 					<div class="col-md-10">
 						<textarea rows="5" class="form-control"
-							placeholder="Describe your complaint here"></textarea>
+							placeholder="Describe your complaint here" name="complaint_text"></textarea>
 					</div>
 				</div>
 
-				<a href="#"><div class="btn btn-info">Submit</div></a> <a href="#"><div
-						class="btn btn-warning">Cancel</div></a>
+				<!--a href="#"><div class="btn btn-info">Submit</div></a-->
+				<input type="submit" value="Submit" class="btn btn-info">
+				</form>
 			</div>
 		</div>
 	</div>
