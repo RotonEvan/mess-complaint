@@ -14,12 +14,12 @@ public class VerifyMess {
 	private static String database_mess = "vaczCbtHZJ";
 	private static String database_password = "91SvOZLrr9";
 
-	static String id;
+	static int pk;
 	static boolean valid;
 
 	public VerifyMess(String messname, String password) throws ClassNotFoundException {
 		// TODO Auto-generated constructor stub
-		id = new String();
+		pk = 0;
 		valid = false;
 
 		System.out.println(messname);
@@ -32,16 +32,16 @@ public class VerifyMess {
 			Connection connection = DriverManager.getConnection(databaseURL, database_mess, database_password);
 			Statement statement1 = connection.createStatement();
 			System.out.println("Checking 01");
-			ResultSet result1 = statement1.executeQuery("SELECT * FROM mess_table WHERE mess_name=" + "\'" + messname + "\'");
+			ResultSet result1 = statement1.executeQuery("SELECT * FROM mess_table WHERE name=" + "\'" + messname + "\'");
 			System.out.println("Checking 02");
 			if (result1.next()) {
 				mess.setMess_pk(result1.getInt("mess"));
 				mess.setMess_id(result1.getString("mess_id"));
-				mess.setMess_name(result1.getString("mess_name"));
+				mess.setMess_name(result1.getString("name"));
 				
-				if (password == result1.getString("password")) {
+				if (password.equals(result1.getString("password"))) {
 					valid = true;
-					id = mess.getMess_id();
+					pk = mess.getMess_pk();
 				}
 				
 			}
@@ -52,12 +52,12 @@ public class VerifyMess {
 
 	public VerifyMess() {
 		// TODO Auto-generated constructor stub
-		id = new String();
+		pk = 0;
 		valid = false;
 	}
 
-	public String getId() {
-		return id;
+	public int getPk() {
+		return pk;
 	}
 
 	public boolean isValid() {

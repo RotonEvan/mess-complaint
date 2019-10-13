@@ -27,4 +27,13 @@
     <servlet-name>Complaint</servlet-name>
     <url-pattern>/complaint</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ViewComplaints</servlet-name>
+    <servlet-class>com.stnt2.simplifiers.messComplaints.servlets.ViewComplaints</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewComplaints</servlet-name>
+    <url-pattern>/view-complaints</url-pattern>
+  </servlet-mapping>
 </web-app>

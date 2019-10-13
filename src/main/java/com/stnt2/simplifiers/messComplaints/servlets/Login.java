@@ -89,11 +89,11 @@ public class Login extends HttpServlet {
 			}
 
 			if (currentUser.isValid()) {
-				String id = currentUser.getId();
+				int pk = currentUser.getPk();
 				HttpSession session = request.getSession();
 				session.setAttribute("username", username);
-				session.setAttribute("id", id);
-				response.sendRedirect(request.getContextPath() + "/Complaint");
+				session.setAttribute("mess_pk", pk);
+				response.sendRedirect(request.getContextPath() + "/ViewComplaints");
 			} else {
 
 				request.setAttribute("message", "Invalid Credentials");
